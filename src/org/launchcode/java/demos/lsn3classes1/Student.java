@@ -38,7 +38,6 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
-
     public String getName(){
         return this.name;
     }
