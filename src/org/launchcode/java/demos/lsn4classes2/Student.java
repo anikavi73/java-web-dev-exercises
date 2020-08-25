@@ -16,6 +16,7 @@ public class Student {
     }
 
     public Student(String name, int studentId) {
+
         this(name, studentId, 0, 0);
     }
 
@@ -25,22 +26,40 @@ public class Student {
     }
 
     public String studentInfo() {
+
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
 
      //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel() {
+        // Determine the grade level of the student based on numberOfCredits
+        if (this.numberOfCredits >90){
+            return "A";
+        } else if (this.numberOfCredits >80){
+            return "B";
+        } else if (this.numberOfCredits >70){
+            return "c";
+        } else if (this.numberOfCredits >60){
+            return "D";
+        } else {
+            return "F";
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+        this.numberOfCredits = courseCredits;
+        this.gpa = grade;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
+
+//    public String toString(){
+//
+//    }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
@@ -69,7 +88,7 @@ public class Student {
         this.studentId = studentId;
     }
 
-    public void setGpa(double gpa) {
+    private void setGpa(double gpa) {
         this.gpa = gpa;
     }
 
@@ -78,12 +97,12 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student sally = new Student("Sally",1,1,4.0);
-        System.out.println("The Student class works! " + sally.getName() + " is a student!");
-        System.out.println(sally);
-        sally.addGrade(12, 3.5);
-        System.out.println(sally);
-        sally.addGrade(25, 3.8);
-        System.out.println(sally);
+        Student kavi = new Student("Kavi",1,1,4.0);
+        System.out.println("The Student class works! " + kavi.getName() + " is a student!");
+        System.out.println(kavi);
+        kavi.addGrade(12, 3.5);
+        System.out.println(kavi);
+        kavi.addGrade(25, 3.8);
+        System.out.println(kavi);
     }
 }
